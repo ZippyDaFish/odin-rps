@@ -1,4 +1,7 @@
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection) {
+    var computerSelection = getComputerChoice();
+    console.log(playerSelection, computerSelection);
+    // calculate winner and apply scores
     if(playerSelection === computerSelection){
         return("Tie");
     }
@@ -26,20 +29,29 @@ function playRound(playerSelection, computerSelection) {
             playerScore++;
         }
     }
+    document.getElementById('comp-selection').innerText = "Computer Selected: " + computerSelection;
+    updateScores();
+    console.log(playerScore, computerScore);
 }
 
 function getComputerChoice() {
+    const choices = ['rock', 'paper', 'scissors'];
     return(choices[Math.floor(Math.random() * choices.length)]);
 }
 
-function game() {
-    const playerSelection = prompt("Rock, Paper, or Scissors?");
-    const computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection);
-    console.log(playerSelection, computerSelection);
-    console.log(playerScore, computerScore);
+function updateScores() {
+    document.getElementById('scores').innerText = playerScore + " : " + computerScore;
+    if(playerScore >= 5){
+        declareWinner("Player");
+    }
+    else if(computerScore >= 5){
+        declareWinner("Computer");
+    }
 }
-const choices = ['rock', 'paper', 'scissors'];
+
+function declareWinner(winner) {
+    document.getElementById('winner').innerText = winner + " wins!"
+}
+
 var playerScore = 0;
 var computerScore = 0;
-game();
