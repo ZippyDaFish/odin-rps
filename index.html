@@ -5,22 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
 </head>
 <body class="container">
     <div class="title">
-        <h2>Rock Paper Scissors</h2>
-        <p>Choose your weapon!</p>
+        <h2 class="text-med">Rock Paper Scissors</h2>
+        <p class="text-med">Choose your weapon!</p>
     </div>
     <div class="buttons">
-        <button id="rock" onclick="playRound(this.id)">Rock</button>
-        <button id="paper" onclick="playRound(this.id)">Paper</button>
-        <button id="scissors" onclick="playRound(this.id)">Scissors</button>
+        <button class="text-med" id="rock" onclick="playRound(this.id)">Rock</button>
+        <button class="text-med" id="paper" onclick="playRound(this.id)">Paper</button>
+        <button class="text-med" id="scissors" onclick="playRound(this.id)">Scissors</button>
     </div>
-    <div>
-        <p id="comp-selection">Computer Selected: </p>
-        <p id="scores">0 : 0</p>
-        <p id="winner"></p>
+    <div class="info">
+        <p class="text-med" id="comp-selection">Computer Selected: </p>
+        <p class="text-med" id="scores">0 : 0</p>
+        <p class="text-med" id="winner"></p>
     </div>
 </body>
 </html>
